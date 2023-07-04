@@ -1,16 +1,14 @@
 //Дана строка Выведите только числа массивом из строки(не отдельно каждую цифру, а [28, 1977])
 const str = "Vladislav Beketov was born on 28 February 1977";
 
-const strArr=str.split(" ");
-const newArr=[];
+const strArr = str.split(" ");
+const newArr = [];
 for (const strword of strArr) {
+  if (Number.isNaN(Number.parseInt(strword))) {
+    continue;
+  }
 
-
-	if(Number.isNaN(Number.parseInt(strword))){
-	continue;
-	}
-
-	newArr.push(strword)
+  newArr.push(strword);
 }
 
 console.log(newArr);
